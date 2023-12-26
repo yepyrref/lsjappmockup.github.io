@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--begin::Head-->
+
+<head>
+    <base href="">
+    <meta charset="utf-8" />
+    <title>LSJ Group</title>
+    <meta name="description" content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets. " />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="canonical" href="https://app.lsjexpress.co.id" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Page Vendors Styles(used by this page)-->
+    <link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+    <!--end::Page Vendors Styles-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link href="assets/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/themes/layout/brand/light.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/themes/layout/aside/dark.lsj.css" rel="stylesheet" type="text/css" />
+    <!--end::Layout Themes-->
+    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body" class="page-loading-enabled page-loading header-fixed header-mobile-fixed subheader-enabled subheader-mobile-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+    <!--[html-partial:include:{"file":"partials/_page-loader.html"}]/-->
+    <!--#include file="partials/_page-loader.html" -->
+    <!--begin::Main-->
+    <!--[html-partial:include:{"file":"partials/_header-mobile.html"}]/-->
+    <!--#include file="partials/_header-mobile.html" -->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="d-flex flex-row flex-column-fluid page">
+            <!--[html-partial:include:{"file":"partials/_aside.html"}]/-->
+            <!--#include file="partials/_aside.html" -->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+                <!--[html-partial:include:{"file":"partials/_header.html"}]/-->
+                <!--#include file="partials/_header.html" -->
+                <!--begin::Content-->
+                <div class="content  d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Subheader-->
+                    <div class="subheader py-2 py-lg-6  subheader-solid " id="kt_subheader">
+                        <div class=" container-fluid  d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center flex-wrap mr-2">
+                                <!--begin::Page Title-->
+                                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">STT Dikirim </h5>
+                                <!--end::Page Title-->
+                                <!--begin::Action-->
+                                <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
+                                <span class="text-muted font-weight-bold mr-4">Form Input STT</span>
+                                <!-- <a href="#" class="btn btn-light-primary font-weight-bolder btn-sm">
+										Add New
+									</a> -->
+                                <!--end::Action-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Subheader-->
+                    <!--begin::Content area here-->
+                    <div class="d-flex flex-column-fluid">
+                        <div class="container-fluid">
+                            <form class="form">
+                                <div class="card card-custom gutter-b">
+                                    <div class="card-body">
+                                        
+                                        <div class="row">
+                                        	<div class="col-md-6">
+                                        		<div class="form-group row">
+		                                            <div class="col-md-12">
+		                                                <label>AWB/No STT Rekanan:</label>
+		                                                <input type="email" class="form-control" placeholder="Masukkan AWB Rekanan" />
+		                                                <span class="form-text text-muted">Nomor AWB atau nomor resi rekanan</span>
+		                                            </div>
+		                                        </div>
+
+                                        		<div class="form-group row">
+	                                                <div class="col-md-10">
+	                                                    <label>Data Pelanggan <span class="text-danger">*</span>:</label>
+	                                                    <select class="form-control select2" id="select2_pelanggan" name="param">
+	                                                        <option label="Label"></option>
+	                                                        <option value="SC">Pro Design - 082233164177 - Banjarmasin</option>
+	                                                        <option value="VT">APM Logistik - 082233164324 - Jakarta</option>
+	                                                        <option value="VA">ANTHONY EVAN - 082141235235 - Palangkaraya</option>
+	                                                        <option value="WV">West Virginia</option>
+	                                                    </select>
+	                                                    <span class="form-text text-muted">&nbsp;</span>
+
+	                                                    <!-- begin::Modal tambah pelanggan-->
+	                                                    <div class="modal fade" id="modalTambahPelanggan" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalTambahPelanggan" aria-hidden="true">
+	                                                        <div class="modal-dialog modal-lg" role="document">
+	                                                            <div class="modal-content">
+	                                                                <div class="modal-header">
+	                                                                    <h5 class="modal-title" id="exampleModalLabel">Form Tambah Pelanggan Baru</h5>
+	                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                                                                        <i aria-hidden="true" class="ki ki-close"></i>
+	                                                                    </button>
+	                                                                </div>
+	                                                                <div class="modal-body">
+	                                                                    ...
+	                                                                </div>
+	                                                                <div class="modal-footer">
+	                                                                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+	                                                                    <button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+	                                                                </div>
+	                                                            </div>
+	                                                        </div>
+	                                                    </div>
+	                                                    <!-- end::Modal tambah pelanggan-->
+	                                                </div>
+	                                                <div class="col-md-2">
+	                                                    <label>&nbsp;</label>
+	                                                    <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+	                                                        <div class="btn-group" role="group" aria-label="First group">
+	                                                            <button type="button" class="btn btn-warning btn-icon" data-toggle="tooltip" data-placement="top" title="Tampilkan Data Pelanggan"><i class="la la-search"></i></button>
+	                                                            <button type="button" class="btn btn-info  btn-icon" data-toggle="modal" data-target="#modalTambahPelanggan" title="Tambah Pelanggan Baru"><i class="la la-user-plus"></i></button>
+	                                                        </div>
+	                                                    </div>
+	                                                </div>
+	                                            </div>
+	                                            
+                                        	</div>
+
+                                        	<div class="col-md-6">
+                                        		<div class="form-group row">
+		                                            <div class="col-md-12">
+		                                                <label>Tanggal Masuk <span class="text-danger">*</span>:</label>
+		                                                <div class="input-group date">
+		                                                    <input type="text" class="form-control" readonly value="10/03/2023" id="stt_datepicker_masuk" />
+		                                                    <div class="input-group-append">
+		                                                        <span class="input-group-text"><i class="la la-calendar"></i></span>
+		                                                    </div>
+		                                                </div>
+		                                                <span class="form-text text-muted">Tanggal barang diterima dari pelanggan</span>
+		                                            </div>
+		                                        </div>
+		                                        <div class="form-group row">
+		                                            <div class="col-md-12">
+		                                                <label>Tanggal Rencana Keluar <span class="text-danger">*</span>:</label>
+		                                                <div class="input-group date">
+		                                                    <input type="text" class="form-control" readonly value="13/03/2023" id="stt_datepicker_keluar" />
+		                                                    <div class="input-group-append">
+		                                                        <span class="input-group-text"><i class="la la-calendar"></i></span>
+		                                                    </div>
+		                                                </div>
+		                                                <span class="form-text text-muted">Estimasi tanggal rencana barang keluar gudang</span>
+		                                            </div>
+		                                            
+		                                        </div>
+                                        	</div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="card-group gutter-b">
+                                	<!-- begin::Data Pengirim -->
+                                	<div class="card card-custom">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <h3 class="card-label">Data Pengirim</h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <div class="form-group row">
+                                                <div class="col-md-6">
+                                                    <label>Nama Pengirim <span class="text-danger">*</span>:</label>
+                                                    <input type="nama_pengirim" class="form-control" placeholder="Nama Pengirim" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>HP/Telpon Pengirim <span class="text-danger">*</span>:</label>
+                                                    <input type="telp_pengirim" class="form-control" placeholder="HP/Telp Pengirim" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <label>Alamat Pengirim <span class="text-danger">*</span>:</label>
+                                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <label>Region/Wilayah Pengirim <span class="text-danger">*</span>:</label>
+                                                    <select class="form-control select2" id="select2_region_asal" name="param">
+                                                        <option label="Label"></option>
+                                                        <option value="SC">Jawa Timur, Kab Sidoarjo, Kec Waru</option>
+                                                        <option value="VT">Jawa Timur, Kab Sidoarjo</option>
+                                                        <option value="VA">Kalimantan Barat, Kota Pontianak, Kec Pontianak Tenggara</option>
+                                                        <option value="VA">Kalimantan Barat, Kota Pontianak</option>
+                                                        <option value="VA">Kalimantan Barat, Kab Kubu Raya, Kec Sungai Raya</option>
+                                                        <option value="VA">Kalimantan Barat, Kab Kubu Raya</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="separator separator-dashed my-10"></div>
+                                        </div>
+                                    </div>
+                                    <!-- end::Data Pengirim -->
+                                	
+                                	<!-- begin::Data Penerima -->
+                                	<div class="card card-custom">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <h3 class="card-label">Data Penerima</h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <div class="col-md-6">
+                                                    <label>Nama Penerima <span class="text-danger">*</span>:</label>
+                                                    <input type="nama_pengirim" class="form-control" placeholder="Nama Pengirim" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>HP/Telpon Penerima <span class="text-danger">*</span>:</label>
+                                                    <input type="telp_pengirim" class="form-control" placeholder="HP/Telp Pengirim" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <label>Alamat Penerima <span class="text-danger">*</span>:</label>
+                                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <label>Region Penerima <span class="text-danger">*</span>:</label>
+                                                    <select class="form-control select2" id="select2_region_tujuan" name="param">
+                                                        <option label="Label"></option>
+                                                        <option value="SC">Jawa Timur, Kab Sidoarjo, Kec Waru</option>
+                                                        <option value="VT">Jawa Timur, Kab Sidoarjo</option>
+                                                        <option value="VA">Kalimantan Barat, Kota Pontianak, Kec Pontianak Tenggara</option>
+                                                        <option value="VA">Kalimantan Barat, Kota Pontianak</option>
+                                                        <option value="VA">Kalimantan Barat, Kab Kubu Raya, Kec Sungai Raya</option>
+                                                        <option value="VA">Kalimantan Barat, Kab Kubu Raya</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="separator separator-dashed my-10"></div>
+                                        </div>
+                                    </div>
+                                    <!-- end::Data Pengirim -->
+                                </div>
+
+                                <div class="card-group gutter-b">
+                                	<div class="card card-custom">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <h3 class="card-label">Informasi Barang Kiriman</h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                        	<div class="form-group row">
+                                        		<div class="col-md-6">
+                                                    <label>Region/Wilayah Asal:</label>
+                                                    <p class="form-control-plaintext font-weight-bold" id="text-asal">Kota Banjarmasin, Kalimantan Selatan</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Region/Wilayah Tujuan:</label>
+                                                    <p class="form-control-plaintext font-weight-bold" id="text-tujuan">Pahadut, Kota Palangka Raya, Kalimantan Tengah</p>
+                                                </div>
+                                        	</div>
+                                        	<div class="form-group">
+                                        		<label for="select_tarif">Tarif Dasar <span class="text-danger">*</span>:</label>
+                                        		<select class="form-control selectpicker" id="id_tarif" name="id_tarif">
+                                        			<option>Silahkan pilih tarif dasar</option>
+                                        			<option> STANDART( 600 / 50Kg - 600 / 50KgV - 150000 / 1M3 )</option>
+                                        		</select>
+                                        		<span class="form-text text-muted">Pastikan master tarif untuk wilayah asal dan wilayah tujuan sudah diisi</span>
+                                        	</div>
+                                        	
+                                        	<div class="form-group row">
+                                        		<label class="col-md-2 col-form-label">Berat <span class="text-danger">*</span>:</label>
+                                        		<div class="col-md-4">
+                                        			<div class="input-group">
+                                        				<input type="text" class="form-control" placeholder="Jml berat"/>
+                                        				<div class="input-group-append">
+                                        					<span class="input-group-text">Kg</span>
+                                        				</div>
+                                    				</div>
+                                        		</div>
+                                        		<label class="col-md-2 col-form-label">Tarif</label>
+                                        		<div class="col-md-4">
+                                        			<input id="text_tarif_kg" type="text" class="form-control" disabled="disabled" value="1.200" />
+                                        		</div>
+                                        	</div>
+                                        	<div class="form-group row">
+                                        		<label class="col-md-2 col-form-label">Volume <span class="text-danger">*</span>:</label>
+                                        		<div class="col-md-4">
+                                        			<div class="input-group">
+                                        				<input type="text" class="form-control" placeholder="Jml volume"/>
+                                        				<div class="input-group-append">
+                                        					<span class="input-group-text">Kgv</span>
+                                        				</div>
+                                    				</div>
+                                        		</div>
+                                        		<label class="col-md-2 col-form-label">Tarif</label>
+                                        		<div class="col-md-4">
+                                        			<input id="text_tarif_kg" type="text" class="form-control" disabled="disabled" value="1.200" />
+                                        		</div>
+                                        	</div>
+                                        	<div class="form-group row">
+                                        		<label class="col-md-2 col-form-label">Kubik <span class="text-danger">*</span>:</label>
+                                        		<div class="col-md-4">
+                                        			<div class="input-group">
+                                        				<input type="text" class="form-control" placeholder="Jml kubik"/>
+                                        				<div class="input-group-append">
+                                        					<span class="input-group-text">M3</span>
+                                        				</div>
+                                    				</div>
+                                        		</div>
+                                        		<label class="col-md-2 col-form-label">Tarif</label>
+                                        		<div class="col-md-4">
+                                        			<input id="text_tarif_kg" type="text" class="form-control" disabled="disabled" value="600.000" />
+                                        		</div>
+                                        	</div>
+                                        	<div class="form-group row">
+                                        		<div class="col-md-6">
+                                        			<label>Jumlah Koli <span class="text-danger">*</span>:</label>
+                                        			<input type="number" class="form-control" placeholder="Masukkan jumlah koli"/>	                                        				
+                                        		</div>
+                                        		<div class="col-md-6">
+	                                        		<label for="select_tipe_barang">Tipe Barang Kiriman <span class="text-danger">*</span>:</label>
+	                                        		<select class="form-control select2" id="select2_tipe_barang" name="param">
+                                                        <option label="Label"></option>
+                                                        <option value="SC">Sepeda Motor</option>
+                                                        <option value="VT">Garmen</option>
+                                                        <option value="VA">Mobil</option>
+                                                        <option value="VA">Bantal</option>
+                                                        <option value="VA">Sepeda</option>
+                                                        <option value="VA">Barang lainnya</option>
+                                                    </select>
+                                        		</div>                          		
+                                        	</div>
+
+                                    	</div>
+                                    </div>
+                                    <div class="card card-custom">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <h3 class="card-label">Perhitungan Tarif</h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                        	
+                                        	<div class="form-group">
+                                        		<label for="select_tarif">Cara Hitung Tarif <span class="text-danger">*</span>:</label>
+											    <div class="row">
+									                <div class="col-sm-6">
+									                    <label class="option">
+									                        <span class="option-control">
+									                            <span class="radio">
+									                                <input type="radio" name="m_option_1" value="1" checked="checked" />
+									                                <span></span>
+									                            </span>
+									                        </span>
+									                        <span class="option-label">
+									                            <span class="option-head">
+									                                <span class="option-title">
+									                                    Berat
+									                                </span>
+									                                <span class="option-focus">
+									                                    Kg
+									                                </span>
+									                            </span>
+									                            <span class="option-body">
+									                                Hitung berdasarkan berat
+									                            </span>
+									                        </span>
+									                    </label>
+									                </div>
+									                <div class="col-sm-6">
+									                    <label class="option">
+									                        <span class="option-control">
+									                            <span class="radio">
+									                                <input type="radio" name="m_option_1" value="1" />
+									                                <span></span>
+									                            </span>
+									                        </span>
+									                        <span class="option-label">
+									                            <span class="option-head">
+									                                <span class="option-title">
+									                                    Volume
+									                                </span>
+									                                <span class="option-focus">
+									                                    Kgv
+									                                </span>
+									                            </span>
+									                            <span class="option-body">
+									                                Hitung berdasarkan volume
+									                            </span>
+									                        </span>
+									                    </label>
+									                </div>
+									                <div class="col-sm-6">
+									                    <label class="option">
+									                        <span class="option-control">
+									                            <span class="radio">
+									                                <input type="radio" name="m_option_1" value="1" />
+									                                <span></span>
+									                            </span>
+									                        </span>
+									                        <span class="option-label">
+									                            <span class="option-head">
+									                                <span class="option-title">
+									                                    Kubik
+									                                </span>
+									                                <span class="option-focus">
+									                                    M3
+									                                </span>
+									                            </span>
+									                            <span class="option-body">
+									                                Hitung berdasarkan Kubikasi
+									                            </span>
+									                        </span>
+									                    </label>
+									                </div>
+									                <div class="col-sm-6">
+									                    <label class="option">
+									                        <span class="option-control">
+									                            <span class="radio">
+									                                <input type="radio" name="m_option_1" value="1" />
+									                                <span></span>
+									                            </span>
+									                        </span>
+									                        <span class="option-label">
+									                            <span class="option-head">
+									                                <span class="option-title">
+									                                    Borongan
+									                                </span>
+									                                <span class="option-focus">
+									                                    <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Perhitingan Borongan membutuhkan Kode Autentikasi dari Kepala Cabang"></i>
+									                                </span>
+									                            </span>
+									                            <span class="option-body">
+									                                Hitung Borongan
+									                            </span>
+									                        </span>
+									                    </label>
+									                </div>
+									            </div>                                        		
+                                        	</div>
+
+                                    	</div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <!--end::Content area here-->
+                </div>
+                <!--end::Content-->
+                <!--[html-partial:include:{"file":"partials/_footer.html"}]/-->
+                <!--#include file="partials/_footer.html" -->
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Page-->
+    </div>
+    <!--end::Main-->
+    <!--[html-partial:include:{"file":"partials/_extras/offcanvas/quick-user.html"}]/-->
+    <!--#include file="partials/_extras/offcanvas/quick-user.html" -->
+    <!--[html-partial:include:{"file":"partials/_extras/scrolltop.html"}]/-->
+    <!--#include file="partials/_extras/scrolltop.html" -->
+    <script>
+    var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";
+    </script>
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>
+    var KTAppSettings = {
+        "breakpoints": {
+            "sm": 576,
+            "md": 768,
+            "lg": 992,
+            "xl": 1200,
+            "xxl": 1400
+        },
+        "colors": {
+            "theme": {
+                "base": {
+                    "white": "#ffffff",
+                    "primary": "#3699FF",
+                    "secondary": "#E5EAEE",
+                    "success": "#1BC5BD",
+                    "info": "#8950FC",
+                    "warning": "#FFA800",
+                    "danger": "#F64E60",
+                    "light": "#E4E6EF",
+                    "dark": "#181C32"
+                },
+                "light": {
+                    "white": "#ffffff",
+                    "primary": "#E1F0FF",
+                    "secondary": "#EBEDF3",
+                    "success": "#C9F7F5",
+                    "info": "#EEE5FF",
+                    "warning": "#FFF4DE",
+                    "danger": "#FFE2E5",
+                    "light": "#F3F6F9",
+                    "dark": "#D6D6E0"
+                },
+                "inverse": {
+                    "white": "#ffffff",
+                    "primary": "#ffffff",
+                    "secondary": "#3F4254",
+                    "success": "#ffffff",
+                    "info": "#ffffff",
+                    "warning": "#ffffff",
+                    "danger": "#ffffff",
+                    "light": "#464E5F",
+                    "dark": "#ffffff"
+                }
+            },
+            "gray": {
+                "gray-100": "#F3F6F9",
+                "gray-200": "#EBEDF3",
+                "gray-300": "#E4E6EF",
+                "gray-400": "#D1D3E0",
+                "gray-500": "#B5B5C3",
+                "gray-600": "#7E8299",
+                "gray-700": "#5E6278",
+                "gray-800": "#3F4254",
+                "gray-900": "#181C32"
+            }
+        },
+        "font-family": "Poppins"
+    };
+    </script>
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="assets/plugins/global/plugins.bundle.js"></script>
+    <script src="assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
+    <script src="assets/js/scripts.bundle.js"></script>
+    <!-- <script src="https://keenthemes.com/metronic/assets/js/engage_code.js"></script> -->
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Vendors(used by this page)-->
+    <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+    <!--end::Page Vendors-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="assets/js/pages/widgets.js"></script>
+    <!-- include custom script for this page -->
+    <script src="assets/js/pages/form-stt.js"></script>
+    <!--end::Page Scripts-->
+</body>
+<!--end::Body-->
+
+</html>

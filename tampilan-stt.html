@@ -1,0 +1,419 @@
+<!--#include file="partials/_main_header.html" -->
+
+					<!--begin::Subheader-->
+                    <div class="subheader py-2 py-lg-6  subheader-solid " id="kt_subheader">
+                        <div class=" container-fluid  d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center flex-wrap mr-2">
+                                <!--begin::Page Title-->
+                                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">STT Dikirim </h5>
+                                <!--end::Page Title-->
+                                <!--begin::Action-->
+                                <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
+                                <span class="text-muted font-weight-bold mr-4">Form Input STT</span>
+                                <!-- <a href="#" class="btn btn-light-primary font-weight-bolder btn-sm">
+										Add New
+									</a> -->
+                                <!--end::Action-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Subheader-->
+
+
+                    <!--begin::Content area here-->
+                    <div class="d-flex flex-column-fluid">
+                        <div class="container-fluid">
+                            <form class="form">
+                                <div class="card card-custom gutter-b">
+                                    <div class="card-body">
+                                        
+                                        <div class="row">
+                                        	<div class="col-md-6">
+                                        		<div class="form-group row">
+		                                            <div class="col-md-12">
+		                                                <label>AWB/No STT Rekanan:</label>
+		                                                <input type="email" class="form-control" placeholder="Masukkan AWB Rekanan" />
+		                                                <span class="form-text text-muted">Nomor AWB atau nomor resi rekanan</span>
+		                                            </div>
+		                                        </div>
+
+                                        		<div class="form-group row">
+	                                                <div class="col-md-10">
+	                                                    <label>Data Pelanggan <span class="text-danger">*</span>:</label>
+	                                                    <select class="form-control select2" id="select2_pelanggan" name="param">
+	                                                        <option label="Label"></option>
+	                                                        <option value="SC">Pro Design - 082233164177 - Banjarmasin</option>
+	                                                        <option value="VT">APM Logistik - 082233164324 - Jakarta</option>
+	                                                        <option value="VA">ANTHONY EVAN - 082141235235 - Palangkaraya</option>
+	                                                        <option value="WV">West Virginia</option>
+	                                                    </select>
+	                                                    <span class="form-text text-muted">&nbsp;</span>
+
+	                                                    <!-- begin::Modal tambah pelanggan-->
+	                                                    <div class="modal fade" id="modalTambahPelanggan" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalTambahPelanggan" aria-hidden="true">
+	                                                        <div class="modal-dialog modal-lg" role="document">
+	                                                            <div class="modal-content">
+	                                                                <div class="modal-header">
+	                                                                    <h5 class="modal-title" id="exampleModalLabel">Form Tambah Pelanggan Baru</h5>
+	                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                                                                        <i aria-hidden="true" class="ki ki-close"></i>
+	                                                                    </button>
+	                                                                </div>
+	                                                                <div class="modal-body">
+	                                                                    ...
+	                                                                </div>
+	                                                                <div class="modal-footer">
+	                                                                    <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+	                                                                    <button type="button" class="btn btn-primary font-weight-bold">Save changes</button>
+	                                                                </div>
+	                                                            </div>
+	                                                        </div>
+	                                                    </div>
+	                                                    <!-- end::Modal tambah pelanggan-->
+	                                                </div>
+	                                                <div class="col-md-2">
+	                                                    <label>&nbsp;</label>
+	                                                    <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+	                                                        <div class="btn-group" role="group" aria-label="First group">
+	                                                            <button type="button" class="btn btn-warning btn-icon" data-toggle="tooltip" data-placement="top" title="Tampilkan Data Pelanggan"><i class="la la-search"></i></button>
+	                                                            <button type="button" class="btn btn-info  btn-icon" data-toggle="modal" data-target="#modalTambahPelanggan" title="Tambah Pelanggan Baru"><i class="la la-user-plus"></i></button>
+	                                                        </div>
+	                                                    </div>
+	                                                </div>
+	                                            </div>
+	                                            
+                                        	</div>
+
+                                        	<div class="col-md-6">
+                                        		<div class="form-group row">
+		                                            <div class="col-md-12">
+		                                                <label>Tanggal Masuk <span class="text-danger">*</span>:</label>
+		                                                <div class="input-group date">
+		                                                    <input type="text" class="form-control" readonly value="10/03/2023" id="stt_datepicker_masuk" />
+		                                                    <div class="input-group-append">
+		                                                        <span class="input-group-text"><i class="la la-calendar"></i></span>
+		                                                    </div>
+		                                                </div>
+		                                                <span class="form-text text-muted">Tanggal barang diterima dari pelanggan</span>
+		                                            </div>
+		                                        </div>
+		                                        <div class="form-group row">
+		                                            <div class="col-md-12">
+		                                                <label>Tanggal Rencana Keluar <span class="text-danger">*</span>:</label>
+		                                                <div class="input-group date">
+		                                                    <input type="text" class="form-control" readonly value="13/03/2023" id="stt_datepicker_keluar" />
+		                                                    <div class="input-group-append">
+		                                                        <span class="input-group-text"><i class="la la-calendar"></i></span>
+		                                                    </div>
+		                                                </div>
+		                                                <span class="form-text text-muted">Estimasi tanggal rencana barang keluar gudang</span>
+		                                            </div>
+		                                            
+		                                        </div>
+                                        	</div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="card-group gutter-b">
+                                	<!-- begin::Data Pengirim -->
+                                	<div class="card card-custom">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <h3 class="card-label">Data Pengirim</h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            
+                                            <div class="form-group row">
+                                                <div class="col-md-6">
+                                                    <label>Nama Pengirim <span class="text-danger">*</span>:</label>
+                                                    <input type="nama_pengirim" class="form-control" placeholder="Nama Pengirim" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>HP/Telpon Pengirim <span class="text-danger">*</span>:</label>
+                                                    <input type="telp_pengirim" class="form-control" placeholder="HP/Telp Pengirim" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <label>Alamat Pengirim <span class="text-danger">*</span>:</label>
+                                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <label>Region/Wilayah Pengirim <span class="text-danger">*</span>:</label>
+                                                    <select class="form-control select2" id="select2_region_asal" name="param">
+                                                        <option label="Label"></option>
+                                                        <option value="SC">Jawa Timur, Kab Sidoarjo, Kec Waru</option>
+                                                        <option value="VT">Jawa Timur, Kab Sidoarjo</option>
+                                                        <option value="VA">Kalimantan Barat, Kota Pontianak, Kec Pontianak Tenggara</option>
+                                                        <option value="VA">Kalimantan Barat, Kota Pontianak</option>
+                                                        <option value="VA">Kalimantan Barat, Kab Kubu Raya, Kec Sungai Raya</option>
+                                                        <option value="VA">Kalimantan Barat, Kab Kubu Raya</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="separator separator-dashed my-10"></div>
+                                        </div>
+                                    </div>
+                                    <!-- end::Data Pengirim -->
+                                	
+                                	<!-- begin::Data Penerima -->
+                                	<div class="card card-custom">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <h3 class="card-label">Data Penerima</h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-group row">
+                                                <div class="col-md-6">
+                                                    <label>Nama Penerima <span class="text-danger">*</span>:</label>
+                                                    <input type="nama_pengirim" class="form-control" placeholder="Nama Pengirim" />
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>HP/Telpon Penerima <span class="text-danger">*</span>:</label>
+                                                    <input type="telp_pengirim" class="form-control" placeholder="HP/Telp Pengirim" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <label>Alamat Penerima <span class="text-danger">*</span>:</label>
+                                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <label>Region Penerima <span class="text-danger">*</span>:</label>
+                                                    <select class="form-control select2" id="select2_region_tujuan" name="param">
+                                                        <option label="Label"></option>
+                                                        <option value="SC">Jawa Timur, Kab Sidoarjo, Kec Waru</option>
+                                                        <option value="VT">Jawa Timur, Kab Sidoarjo</option>
+                                                        <option value="VA">Kalimantan Barat, Kota Pontianak, Kec Pontianak Tenggara</option>
+                                                        <option value="VA">Kalimantan Barat, Kota Pontianak</option>
+                                                        <option value="VA">Kalimantan Barat, Kab Kubu Raya, Kec Sungai Raya</option>
+                                                        <option value="VA">Kalimantan Barat, Kab Kubu Raya</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="separator separator-dashed my-10"></div>
+                                        </div>
+                                    </div>
+                                    <!-- end::Data Pengirim -->
+                                </div>
+
+                                <div class="card-group gutter-b">
+                                	<div class="card card-custom">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <h3 class="card-label">Informasi Barang Kiriman</h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                        	<div class="form-group row">
+                                        		<div class="col-md-6">
+                                                    <label>Region/Wilayah Asal:</label>
+                                                    <p class="form-control-plaintext font-weight-bold" id="text-asal">Kota Banjarmasin, Kalimantan Selatan</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label>Region/Wilayah Tujuan:</label>
+                                                    <p class="form-control-plaintext font-weight-bold" id="text-tujuan">Pahadut, Kota Palangka Raya, Kalimantan Tengah</p>
+                                                </div>
+                                        	</div>
+                                        	<div class="form-group">
+                                        		<label for="select_tarif">Tarif Dasar <span class="text-danger">*</span>:</label>
+                                        		<select class="form-control selectpicker" id="id_tarif" name="id_tarif">
+                                        			<option>Silahkan pilih tarif dasar</option>
+                                        			<option> STANDART( 600 / 50Kg - 600 / 50KgV - 150000 / 1M3 )</option>
+                                        		</select>
+                                        		<span class="form-text text-muted">Pastikan master tarif untuk wilayah asal dan wilayah tujuan sudah diisi</span>
+                                        	</div>
+                                        	
+                                        	<div class="form-group row">
+                                        		<label class="col-md-2 col-form-label">Berat <span class="text-danger">*</span>:</label>
+                                        		<div class="col-md-4">
+                                        			<div class="input-group">
+                                        				<input type="text" class="form-control" placeholder="Jml berat"/>
+                                        				<div class="input-group-append">
+                                        					<span class="input-group-text">Kg</span>
+                                        				</div>
+                                    				</div>
+                                        		</div>
+                                        		<label class="col-md-2 col-form-label">Tarif</label>
+                                        		<div class="col-md-4">
+                                        			<input id="text_tarif_kg" type="text" class="form-control" disabled="disabled" value="1.200" />
+                                        		</div>
+                                        	</div>
+                                        	<div class="form-group row">
+                                        		<label class="col-md-2 col-form-label">Volume <span class="text-danger">*</span>:</label>
+                                        		<div class="col-md-4">
+                                        			<div class="input-group">
+                                        				<input type="text" class="form-control" placeholder="Jml volume"/>
+                                        				<div class="input-group-append">
+                                        					<span class="input-group-text">Kgv</span>
+                                        				</div>
+                                    				</div>
+                                        		</div>
+                                        		<label class="col-md-2 col-form-label">Tarif</label>
+                                        		<div class="col-md-4">
+                                        			<input id="text_tarif_kg" type="text" class="form-control" disabled="disabled" value="1.200" />
+                                        		</div>
+                                        	</div>
+                                        	<div class="form-group row">
+                                        		<label class="col-md-2 col-form-label">Kubik <span class="text-danger">*</span>:</label>
+                                        		<div class="col-md-4">
+                                        			<div class="input-group">
+                                        				<input type="text" class="form-control" placeholder="Jml kubik"/>
+                                        				<div class="input-group-append">
+                                        					<span class="input-group-text">M3</span>
+                                        				</div>
+                                    				</div>
+                                        		</div>
+                                        		<label class="col-md-2 col-form-label">Tarif</label>
+                                        		<div class="col-md-4">
+                                        			<input id="text_tarif_kg" type="text" class="form-control" disabled="disabled" value="600.000" />
+                                        		</div>
+                                        	</div>
+                                        	<div class="form-group row">
+                                        		<div class="col-md-6">
+                                        			<label>Jumlah Koli <span class="text-danger">*</span>:</label>
+                                        			<input type="number" class="form-control" placeholder="Masukkan jumlah koli"/>	                                        				
+                                        		</div>
+                                        		<div class="col-md-6">
+	                                        		<label for="select_tipe_barang">Tipe Barang Kiriman <span class="text-danger">*</span>:</label>
+	                                        		<select class="form-control select2" id="select2_tipe_barang" name="param">
+                                                        <option label="Label"></option>
+                                                        <option value="SC">Sepeda Motor</option>
+                                                        <option value="VT">Garmen</option>
+                                                        <option value="VA">Mobil</option>
+                                                        <option value="VA">Bantal</option>
+                                                        <option value="VA">Sepeda</option>
+                                                        <option value="VA">Barang lainnya</option>
+                                                    </select>
+                                        		</div>                          		
+                                        	</div>
+
+                                    	</div>
+                                    </div>
+                                    <div class="card card-custom">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                <h3 class="card-label">Perhitungan Tarif</h3>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                        	
+                                        	<div class="form-group">
+                                        		<label for="select_tarif">Cara Hitung Tarif <span class="text-danger">*</span>:</label>
+											    <div class="row">
+									                <div class="col-sm-6">
+									                    <label class="option">
+									                        <span class="option-control">
+									                            <span class="radio">
+									                                <input type="radio" name="m_option_1" value="1" checked="checked" />
+									                                <span></span>
+									                            </span>
+									                        </span>
+									                        <span class="option-label">
+									                            <span class="option-head">
+									                                <span class="option-title">
+									                                    Berat
+									                                </span>
+									                                <span class="option-focus">
+									                                    Kg
+									                                </span>
+									                            </span>
+									                            <span class="option-body">
+									                                Hitung berdasarkan berat
+									                            </span>
+									                        </span>
+									                    </label>
+									                </div>
+									                <div class="col-sm-6">
+									                    <label class="option">
+									                        <span class="option-control">
+									                            <span class="radio">
+									                                <input type="radio" name="m_option_1" value="1" />
+									                                <span></span>
+									                            </span>
+									                        </span>
+									                        <span class="option-label">
+									                            <span class="option-head">
+									                                <span class="option-title">
+									                                    Volume
+									                                </span>
+									                                <span class="option-focus">
+									                                    Kgv
+									                                </span>
+									                            </span>
+									                            <span class="option-body">
+									                                Hitung berdasarkan volume
+									                            </span>
+									                        </span>
+									                    </label>
+									                </div>
+									                <div class="col-sm-6">
+									                    <label class="option">
+									                        <span class="option-control">
+									                            <span class="radio">
+									                                <input type="radio" name="m_option_1" value="1" />
+									                                <span></span>
+									                            </span>
+									                        </span>
+									                        <span class="option-label">
+									                            <span class="option-head">
+									                                <span class="option-title">
+									                                    Kubik
+									                                </span>
+									                                <span class="option-focus">
+									                                    M3
+									                                </span>
+									                            </span>
+									                            <span class="option-body">
+									                                Hitung berdasarkan Kubikasi
+									                            </span>
+									                        </span>
+									                    </label>
+									                </div>
+									                <div class="col-sm-6">
+									                    <label class="option">
+									                        <span class="option-control">
+									                            <span class="radio">
+									                                <input type="radio" name="m_option_1" value="1" />
+									                                <span></span>
+									                            </span>
+									                        </span>
+									                        <span class="option-label">
+									                            <span class="option-head">
+									                                <span class="option-title">
+									                                    Borongan
+									                                </span>
+									                                <span class="option-focus">
+									                                    <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Perhitingan Borongan membutuhkan Kode Autentikasi dari Kepala Cabang"></i>
+									                                </span>
+									                            </span>
+									                            <span class="option-body">
+									                                Hitung Borongan
+									                            </span>
+									                        </span>
+									                    </label>
+									                </div>
+									            </div>                                        		
+                                        	</div>
+
+                                    	</div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <!--end::Content area here-->
+
+
+<!--#include file="partials/_main_footer.html" -->
